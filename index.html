@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>YouTube Thumbnail Downloader</title>
+</head>
+<body>
+  <h1>Download YouTube Thumbnail</h1>
+  <input type="text" id="yturl" placeholder="Paste YouTube video URL here" />
+  <button onclick="getThumbnail()">Get Thumbnail</button>
+  <br><br>
+  <img id="thumb" width="300"/>
+  
+  <script>
+    function getThumbnail() {
+      let url = document.getElementById("yturl").value;
+      let videoID = url.split("v=")[1]?.split("&")[0];
+      let thumbURL = `https://img.youtube.com/vi/${videoID}/maxresdefault.jpg`;
+      document.getElementById("thumb").src = thumbURL;
+    }
+  </script>
+</body>
+</html>
